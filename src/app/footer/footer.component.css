@@ -1,0 +1,44 @@
+  .spacer {
+    flex: 1;
+  }
+
+  .footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+  }
+
+  /*footer {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    line-height: 20px;
+  }*/
+
+  .footer img {
+    margin: 0 16px;
+  }
+
+  .footer #twitter-logo, .footer #youtube-logo {
+    height: 40px;
+    margin: 0 8px;
+  }
+
+  .footer #instagram-logo {
+    height: 40px;
+    margin: 0 16px;
+    fill: white;
+  }
+
+  .toolbar #twitter-logo:hover,
+  .toolbar #youtube-logo:hover, 
+  .toolbar #instagram-logo:hover{
+    opacity: 0.8;
+  }
