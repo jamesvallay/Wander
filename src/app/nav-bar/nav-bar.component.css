@@ -1,0 +1,44 @@
+  .spacer {
+    flex: 1;
+  }
+
+  .nav-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+  }
+
+  .nav-bar img {
+    margin: 0 16px;
+  }
+
+  .pref-button{
+    margin: 0;
+    margin-right: 30px;
+    padding: 5px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0px 3px 4px #999;
+}
+  
+  .pref-button:hover {background-color: #3e8e41}
+  
+  .pref-button:active {
+    background-color: #3e8e41;
+    box-shadow: 0px 2px 4px #666;
+    transform: translateY(4px);
+  }
