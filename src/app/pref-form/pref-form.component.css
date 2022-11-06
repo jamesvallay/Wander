@@ -1,0 +1,76 @@
+/* The slider itself */
+.slider 
+{
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 15px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+    border-radius: 10px; 
+}
+  
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+.slider::-moz-range-thumb 
+{
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #1976d2; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 15px; 
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #1976d2; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 15px; 
+  }
+
+.grid-container-element 
+{ 
+    align-items: center;
+    text-align: center;
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-gap: 0px;
+    width: 70%;
+}
+
+.submit-prefs
+{
+    margin: 0;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0px 7px 5px #999;
+}
+
+.submit-prefs:hover 
+{
+    background-color: #3e8e41
+}
+  
+.submit-prefs:active 
+{
+    background-color: #3e8e41;
+    box-shadow: 0px 2px 4px #666;
+    transform: translateY(4px);
+}
