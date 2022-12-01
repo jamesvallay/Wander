@@ -7,12 +7,23 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 60px;
-    display: flex;
+    width: 100%;
+    height:fit-content;
+    /*display: flex;*/
     align-items: center;
     background-color: #1976d2;
     color: white;
     font-weight: 600;
+  }
+
+  .logo_stuff, .contact, .developers, .copyright{
+    width: 100%;
+    text-align: center;
+  }
+
+  .developers{
+    list-style: none;
+    padding: 0;
   }
 
   /*footer {
@@ -22,23 +33,19 @@
     line-height: 20px;
   }*/
 
-  .footer img {
-    margin: 0 16px;
-  }
-
-  .footer #twitter-logo, .footer #youtube-logo {
+  #twitter-logo, #youtube-logo {
     height: 40px;
     margin: 0 8px;
   }
 
-  .footer #instagram-logo {
+  #instagram-logo {
     height: 40px;
     margin: 0 16px;
     fill: white;
   }
 
-  .toolbar #twitter-logo:hover,
-  .toolbar #youtube-logo:hover, 
-  .toolbar #instagram-logo:hover{
+  #twitter-logo:hover,
+  #youtube-logo:hover, 
+  #instagram-logo:hover{
     opacity: 0.8;
   }
