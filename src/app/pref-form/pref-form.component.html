@@ -42,7 +42,7 @@
         
         <div class="grid-container-element">
             <div style="text-align: left; padding-left: 10px; width: 100%;">
-                <h3>Humitidy</h3>
+                <h3>Humidity</h3>
             </div>
             <div style="width: 150%; padding-top: 8px;">
                 <input type="range" min="1" max="5" value="1" class="slider" id="humitidy" oninput='document.getElementById("humitidy_value").textContent = "Value = "+value'>
@@ -272,9 +272,30 @@
             <div style="text-align: left; padding-left: 10px; width: 200%;">
                 <h3>Please specify home:</h3>
             </div>
-            <form style="padding-left: 100px;">
-                <input type="text" id="home_input" name="home_input">
-            </form> 
+            <select style="padding-left: 125px;" id="home_input" name="home_input">
+                <option value="phila_pa"></option>
+                <option value="phila_pa">Allentown,PA</option>
+                <option value="phila_pa">Altoona,PA</option>
+                <option value="phila_pa">Erie,PA</option>
+                <option value="phila_pa">Gettysburg,PA</option>
+                <option value="phila_pa">Grove City,PA</option>
+                <option value="phila_pa">Hershey,PA</option>
+                <option value="phila_pa">Indiana,PA</option>
+                <option value="phila_pa">Jim Thorpe,PA</option>
+                <option value="phila_pa">King of Prussia,PA</option>
+                <option value="phila_pa">Lancaster,PA</option>
+                <option value="phila_pa">Mansfield,PA</option>
+                <option value="phila_pa">Mt Pocono,PA</option>
+                <option value="phila_pa">Philadelphia,PA</option>
+                <option value="phila_pa">Pittsburgh,PA</option>
+                <option value="phila_pa">Punxsutawney,PA</option>
+                <option value="phila_pa">Scranton,PA</option>
+                <option value="phila_pa">Somerset,PA</option>
+                <option value="phila_pa">State College,PA</option>
+                <option value="phila_pa">Uniontown,PA</option>
+                <option value="phila_pa">Williamsport,PA</option>
+                <option value="phila_pa">York,PA</option>
+            </select>
         </div>
 
         <h2>Accommodations</h2>
@@ -328,7 +349,7 @@
         </div>
 
         <div style="padding-left: 37%; padding-bottom: 15px; padding-top: 15px;">
-            <button class="submit-prefs" onclick="submitTheDataMate()"> Submit and View Matching Locations</button>
+            <button class="submit-prefs" (click)="submitTheDataMate()"> Submit and View Matching Locations</button>
         </div>
     </div>
 </div>
