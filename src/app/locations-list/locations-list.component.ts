@@ -17,7 +17,7 @@ export class LocationsListComponent implements OnInit {
 
   constructor() { 
     for(let i = 0; i<10; i++){
-      let loc = {name:"thing", children:[{name:"lala1"},{name: "lala2", children:[{name: "lala2 desc."}]}]};
+      let loc = {name:"thing", children:[{name:"lala1", isOpen:false},{name: "lala2", children:[{name: "lala2 desc.", isOpen:false}], isOpen:false}], isCity:true, isOpen:false};
       this.locations.push(loc);
     }
     this.dataSource.data = this.locations;
@@ -32,5 +32,13 @@ export class LocationsListComponent implements OnInit {
   }
 
   hasChild = (_: number, node: Location) => (!!node.children && node.children.length > 0);
+
+  queryCity(node: Location){
+    node.isOpen = !node.isOpen;
+    if (node.isOpen){
+      //will be replaced to make a query to google maps api to display the city expanded. Will display most recently opened city
+      alert(node.name);
+    }
+  }
 
 }

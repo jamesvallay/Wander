@@ -7,7 +7,7 @@
         <div class="mat-tree-node">
           <button mat-icon-button matTreeNodeToggle
                   [attr.aria-label]="'Toggle ' + node.name">
-            <mat-icon class="mat-icon-rtl-mirror">
+            <mat-icon class="mat-icon-rtl-mirror"  (click)="node.isCity==true && queryCity(node)">
               {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
             </mat-icon>
           </button>
