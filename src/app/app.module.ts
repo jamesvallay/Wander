@@ -12,6 +12,7 @@ import { LocationsListComponent } from './locations-list/locations-list.componen
 import { CustomMapComponent } from './custom-map/custom-map.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent},
@@ -34,7 +35,8 @@ const routes: Routes = [
     BrowserModule,
     RouterModule.forRoot(routes),
     NoopAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    GoogleMapsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
