@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute,Router } from '@angular/router';
 import { ignoreElements } from 'rxjs';
 import { GlobalsService, MatchingLoc } from 'src/app/globals.service';
 
@@ -14,7 +14,7 @@ export class PrefFormComponent implements OnInit {
   matchingLocs: MatchingLoc[] = [];
   prefs;
   
-  constructor(private route: ActivatedRoute, private globals: GlobalsService) 
+  constructor(private router: Router, private route: ActivatedRoute, private globals: GlobalsService) 
   { 
     this.locations = this.globals.locations;
     this.matchingLocs = this.globals.getMatchingLocs();
@@ -45,6 +45,85 @@ export class PrefFormComponent implements OnInit {
 
     ((document.getElementById("cold_weather")) as HTMLSelectElement)!.value = this.prefs.cold_weather+"";
     document.getElementById("cold_weather_value")!.textContent = "Value = "+this.prefs.cold_weather;
+
+    ((document.getElementById("rain")) as HTMLSelectElement)!.value = this.prefs.rain+"";
+    document.getElementById("rain_value")!.textContent = "Value = "+this.prefs.rain;
+
+    ((document.getElementById("humitidy")) as HTMLSelectElement)!.value = this.prefs.humidity+"";
+    document.getElementById("humitidy_value")!.textContent = "Value = "+this.prefs.humidity;
+
+    ((document.getElementById("dry_climates")) as HTMLSelectElement)!.value = this.prefs.dry_climates+"";
+    document.getElementById("dry_climates_value")!.textContent = "Value = "+this.prefs.dry_climates;
+
+    ((document.getElementById("beach")) as HTMLSelectElement)!.value = this.prefs.beach+"";
+    document.getElementById("beach_value")!.textContent = "Value = "+this.prefs.beach;
+
+    ((document.getElementById("shopping")) as HTMLSelectElement)!.value = this.prefs.shopping+"";
+    document.getElementById("shopping_value")!.textContent = "Value = "+this.prefs.shopping;
+
+    ((document.getElementById("hiking")) as HTMLSelectElement)!.value = this.prefs.hiking+"";
+    document.getElementById("hiking_value")!.textContent = "Value = "+this.prefs.hiking;
+
+    ((document.getElementById("camping")) as HTMLSelectElement)!.value = this.prefs.camping+"";
+    document.getElementById("camping_value")!.textContent = "Value = "+this.prefs.camping;
+
+    ((document.getElementById("outdoor_sports")) as HTMLSelectElement)!.value = this.prefs.outdoor_sports+"";
+    document.getElementById("outdoor_sports_value")!.textContent = "Value = "+this.prefs.outdoor_sports;
+
+    ((document.getElementById("winter_sports")) as HTMLSelectElement)!.value = this.prefs.winter_sports+"";
+    document.getElementById("winter_sports_value")!.textContent = "Value = "+this.prefs.winter_sports;
+
+    ((document.getElementById("water_sports")) as HTMLSelectElement)!.value = this.prefs.water_sports+"";
+    document.getElementById("water_sports_value")!.textContent = "Value = "+this.prefs.water_sports;
+
+    ((document.getElementById("amusement_parks")) as HTMLSelectElement)!.value = this.prefs.amusement_parks+"";
+    document.getElementById("amusement_parks_value")!.textContent = "Value = "+this.prefs.amusement_parks;
+
+    ((document.getElementById("clubs_and_bars")) as HTMLSelectElement)!.value = this.prefs.clubs_and_bars+"";
+    document.getElementById("clubs_and_bars_value")!.textContent = "Value = "+this.prefs.clubs_and_bars;
+
+    ((document.getElementById("casinos")) as HTMLSelectElement)!.value = this.prefs.casinos+"";
+    document.getElementById("casinos_value")!.textContent = "Value = "+this.prefs.casinos;
+
+    ((document.getElementById("sightseeing_tours")) as HTMLSelectElement)!.value = this.prefs.sightseeing_tours+"";
+    document.getElementById("sightseeing_tours_value")!.textContent = "Value = "+this.prefs.sightseeing_tours;
+
+    ((document.getElementById("boardwalk_attractions")) as HTMLSelectElement)!.value = this.prefs.boardwalk_attractions+"";
+    document.getElementById("boardwalk_attractions_value")!.textContent = "Value = "+this.prefs.boardwalk_attractions;
+
+    ((document.getElementById("concerts")) as HTMLSelectElement)!.value = this.prefs.concerts+"";
+    document.getElementById("concerts_value")!.textContent = "Value = "+this.prefs.concerts;
+
+    ((document.getElementById("professional_sports")) as HTMLSelectElement)!.value = this.prefs.professional_sports+"";
+    document.getElementById("professional_sports_value")!.textContent = "Value = "+this.prefs.professional_sports;
+
+    ((document.getElementById("price")) as HTMLSelectElement)!.value = this.prefs.price+"";
+    document.getElementById("price_value")!.textContent = "Value = "+this.prefs.price;
+
+    ((document.getElementById("distance")) as HTMLSelectElement)!.value = this.prefs.distance+"";
+    document.getElementById("distance_value")!.textContent = "Value = "+this.prefs.distance;
+
+    ((document.getElementById("hotel_resort")) as HTMLSelectElement)!.value = this.prefs.hotel_resort+"";
+    document.getElementById("hotel_resort_value")!.textContent = "Value = "+this.prefs.hotel_resort;
+
+    ((document.getElementById("airbnb")) as HTMLSelectElement)!.value = this.prefs.airbnb+"";
+    document.getElementById("airbnb_value")!.textContent = "Value = "+this.prefs.airbnb;
+
+    ((document.getElementById("beach_house")) as HTMLSelectElement)!.value = this.prefs.beach_house+"";
+    document.getElementById("beach_house_value")!.textContent = "Value = "+this.prefs.beach_house;
+
+    ((document.getElementById("cabin")) as HTMLSelectElement)!.value = this.prefs.cabin+"";
+    document.getElementById("cabin_value")!.textContent = "Value = "+this.prefs.cabin;
+
+    var home_input = (document.getElementById("home_input")) as HTMLSelectElement;
+    for (var i=0; i<home_input.options.length; i++)
+    {
+      if (home_input.options[i].text == this.prefs.home)
+      {
+        ((document.getElementById("home_input")) as HTMLSelectElement)!.selectedIndex = i;
+        break;
+      }
+    }
   }
 
   public submitTheDataMate()
@@ -63,6 +142,7 @@ export class PrefFormComponent implements OnInit {
       console.clear();
 
       console.log("home_input_value = "+home_input_value);
+      this.prefs.home = home_input_value;
       
       let warm_weather = document.getElementById("warm_weather_value")?.textContent;
       let warm_weather_value = parseInt(warm_weather!?.substring(8, warm_weather.length));
@@ -378,6 +458,8 @@ export class PrefFormComponent implements OnInit {
           console.log(this.matchingLocs[this.matchingLocs.length-1].name+" matches "+this.matchingLocs[this.matchingLocs.length-1].matchingPercent+"%");
         }
       }
+
+      this.router.navigate(['/pref-form/results'], { relativeTo: this.route });
     }
   }
 
