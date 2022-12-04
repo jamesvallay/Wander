@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ChangeLocationsService } from '../change-locations.service';
+import { GlobalsService, MatchingLoc } from 'src/app/globals.service';
 
   interface Window {
     initMap: () => void;
@@ -12,20 +13,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomMapComponent implements OnInit {
 
-  constructor() { }
+  subscription: any;
+
+  constructor(private locChangeService:ChangeLocationsService, private globals: GlobalsService) { }
 
   ngOnInit(): void {
     this.initMap();
+    this.subscription = this.locChangeService.getLocChangeEmitter()
+      .subscribe(item => {
+        console.log(item)
+        this.changeMap(item);
+      });
   }
 
   initMap(): void {
     // Create the map 
-    const pyrmont = { lat: 40.440009, lng: -79.996403 };
+    const coords = { lat: 40.803520, lng: -77.779438 };
     const map = new google.maps.Map(
       document.getElementById("map") as HTMLElement,
       {
-        center: pyrmont,
-        zoom: 10,
+        center: coords,
+        zoom: 7,
         mapId: "8d193001f940fde3",
       } as google.maps.MapOptions
     );
@@ -64,6 +72,30 @@ export class CustomMapComponent implements OnInit {
         }
       }
     );*/
+  }
+  
+  changeMap(cityName:string): void {
+    let coords = {lat: 0, lng: 0}
+    let arr = this.globals.locations;
+    for(let i = 0; i<arr.length; i++){
+      if(arr[i].name===cityName){
+        coords.lat = arr[i].coordsN;
+        coords.lng = arr[i].coordsE;
+        const map = new google.maps.Map(
+          document.getElementById("map") as HTMLElement,
+          {
+            center: coords,
+            zoom: 12,
+            mapId: "8d193001f940fde3",
+          } as google.maps.MapOptions
+        );
+        break;
+      }
+    }
+    /*let map = document.getElementById("map");
+    if(map){
+      map.setCenter
+    }*/
   }
   
   /*addPlaces(

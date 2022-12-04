@@ -3,6 +3,7 @@ import { Location } from '../models/location';
 import {NestedTreeControl} from '@angular/cdk/tree';
 import {MatTreeNestedDataSource} from '@angular/material/tree';
 import { GlobalsService, MatchingLoc } from 'src/app/globals.service';
+import { ChangeLocationsService } from '../change-locations.service';
 
 @Component({
   selector: 'app-locations-list',
@@ -17,7 +18,7 @@ export class LocationsListComponent implements OnInit {
   locations:Array<Location> = [];
   matchingLocs;
 
-  constructor(private globals: GlobalsService) 
+  constructor(private globals: GlobalsService, private locChangeService: ChangeLocationsService) 
   { 
     console.clear();
     this.matchingLocs = this.sortLocations(this.globals.getMatchingLocs());
@@ -50,6 +51,7 @@ export class LocationsListComponent implements OnInit {
     if (node.isOpen){
       //will be replaced to make a query to google maps api to display the city expanded. Will display most recently opened city
       //alert(node.name);
+      this.locChangeService.changeLocs(node.name);
     }
   }
 
