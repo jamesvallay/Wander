@@ -21,10 +21,23 @@ export class LocationsListComponent implements OnInit {
   { 
     console.clear();
     this.matchingLocs = this.sortLocations(this.globals.getMatchingLocs());
-    for (var i=0; i<this.matchingLocs.length-15; i++)
+
+    var max = 10;
+    if (this.matchingLocs.length < max)
+      max = this.matchingLocs.length;
+
+    for (var i=0; i<max; i++)
     {
-      console.log(this.matchingLocs[i].name+" matches "+this.matchingLocs[i].matchingPercent+"%");
-      let loc = {name:this.matchingLocs[i].name+" matches your preferences "+this.matchingLocs[i].matchingPercent+"%", children:[{name:"lala1", isOpen:false},{name: "lala2", children:[{name: "lala2 desc.", isOpen:false}], isOpen:false}], isCity:true, isOpen:false};
+      var childs: Location[] = [];
+      for (var j=0; j<this.matchingLocs[i].attracs.length; j++)
+      {
+        childs.push({name: "Check out "+this.matchingLocs[i].attracs[j].name+"!", isOpen:false});
+      }
+
+      if (childs.length == 0)
+        childs.push({name: "No attractions matching your preferences were found :(", isOpen:false});
+
+      let loc = {name:this.matchingLocs[i].name+" matches your preferences "+this.matchingLocs[i].matchingPercent+"%", children:childs, isCity:true, isOpen:false};
       this.locations.push(loc);
     }
     
@@ -72,7 +85,7 @@ export class LocationsListComponent implements OnInit {
         }
       }
 
-      let aLocation = new MatchingLoc(matchingLocs[biggestIndex].name, matchingLocs[biggestIndex].matchingPercent);
+      let aLocation = new MatchingLoc(matchingLocs[biggestIndex].name, matchingLocs[biggestIndex].matchingPercent, matchingLocs[biggestIndex].attracs, matchingLocs[biggestIndex].coordsN, matchingLocs[biggestIndex].coordsE);
       newMatchingLocs.push(aLocation);
       matchingLocs.splice(biggestIndex, 1);
     }
