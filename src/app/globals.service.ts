@@ -6,57 +6,57 @@ import { Injectable } from '@angular/core';
 export class GlobalsService {
 
     locations = [{name: "Philaldelphia,PA", avgTemp: 56, annualRainInches: 20.42, avgHumidity: 64, beaches: 1, shopping: 5, hiking: 3, camping: 1, outdoorSports: 1, winterSports: 1,
-                waterSports: 2, amusParks: 1, clubsBars: 5, casinos: 5, sightSeeing: 5, boardwalk: 1, concerts: 5, proSports: 5, cost: 3, accom: "Hotel,Airbnb", coordsN: 39.9, coordsE: -75.1}
+                waterSports: 2, amusParks: 1, clubsBars: 5, casinos: 5, sightSeeing: 5, boardwalk: 1, concerts: 5, proSports: 5, cost: 3, accom: "Hotel,Airbnb", coordsN: 39.9526, coordsE: -75.1652}
                 ,{name: "Pittsburgh,PA", avgTemp: 52, annualRainInches: 20.9, avgHumidity: 67, beaches: 1, shopping: 5, hiking: 3, camping: 1, outdoorSports: 1, winterSports: 1,
-                waterSports: 2, amusParks: 3, clubsBars: 5, casinos: 5, sightSeeing: 3, boardwalk: 1, concerts: 5, proSports: 5, cost: 3, accom: "Hotel,Airbnb", coordsN: 40.4, coordsE: -79.9}
+                waterSports: 2, amusParks: 3, clubsBars: 5, casinos: 5, sightSeeing: 3, boardwalk: 1, concerts: 5, proSports: 5, cost: 3, accom: "Hotel,Airbnb", coordsN: 40.4406, coordsE: -79.9959}
                 ,{name: "Erie,PA", avgTemp: 50, annualRainInches: 24.9, avgHumidity: 71, beaches: 4, shopping: 3, hiking: 2, camping: 1, outdoorSports: 3, winterSports: 1,
-                waterSports: 4, amusParks: 4, clubsBars: 5, casinos: 3, sightSeeing: 3, boardwalk: 3, concerts: 3, proSports: 1, cost: 2, accom: "Hotel,Airbnb,Beach House", coordsN: 42.1, coordsE: -80.1}
+                waterSports: 4, amusParks: 4, clubsBars: 5, casinos: 3, sightSeeing: 3, boardwalk: 3, concerts: 3, proSports: 1, cost: 2, accom: "Hotel,Airbnb,Beach House", coordsN: 42.1292, coordsE: -80.0851}
                 ,{name: "Lancaster,PA", avgTemp: 53, annualRainInches: 12.2, avgHumidity: 67, beaches: 1, shopping: 3, hiking: 2, camping: 1, outdoorSports: 3, winterSports: 1,
-                waterSports: 1, amusParks: 2, clubsBars: 4, casinos: 2, sightSeeing: 2, boardwalk: 1, concerts: 1, proSports: 1, cost: 2, accom: "Hotel,Airbnb", coordsN: 40.0, coordsE: -76.3}
+                waterSports: 1, amusParks: 2, clubsBars: 4, casinos: 2, sightSeeing: 2, boardwalk: 1, concerts: 1, proSports: 1, cost: 2, accom: "Hotel,Airbnb", coordsN: 40.0379, coordsE: -76.3055}
                 ,{name: "Allentown,PA", avgTemp: 52, annualRainInches: 22.8, avgHumidity: 67, beaches: 1, shopping: 4, hiking: 3, camping: 1, outdoorSports: 2, winterSports: 2,
-                waterSports: 1, amusParks: 5, clubsBars: 5, casinos: 3, sightSeeing: 2, boardwalk: 1, concerts: 1, proSports: 1, cost: 2, accom: "Hotel,Airbnb", coordsN: 40.6, coordsE: -75.4}                         
+                waterSports: 1, amusParks: 5, clubsBars: 5, casinos: 3, sightSeeing: 2, boardwalk: 1, concerts: 1, proSports: 1, cost: 2, accom: "Hotel,Airbnb", coordsN: 40.6023, coordsE: -75.4714}                         
                 ,{name: "Gettysburg,PA", avgTemp: 53, annualRainInches: 20.5, avgHumidity: 69, beaches: 1, shopping: 2, hiking: 3, camping: 3, outdoorSports: 2, winterSports: 1,
-                waterSports: 1, amusParks: 1, clubsBars: 2, casinos: 1, sightSeeing: 4, boardwalk: 1, concerts: 1, proSports: 1, cost: 2, accom: "Hotel,Airbnb", coordsN: 39.8, coordsE: -77.2}
+                waterSports: 1, amusParks: 1, clubsBars: 2, casinos: 1, sightSeeing: 4, boardwalk: 1, concerts: 1, proSports: 1, cost: 2, accom: "Hotel,Airbnb", coordsN: 39.8309, coordsE: -77.2311}
                 ,{name: "Mt Pocono,PA", avgTemp: 48, annualRainInches: 43.7, avgHumidity: 70, beaches: 1, shopping: 2, hiking: 4, camping: 3, outdoorSports: 2, winterSports: 5,
-                waterSports: 1, amusParks: 5, clubsBars: 3, casinos: 5, sightSeeing: 1, boardwalk: 1, concerts: 1, proSports: 1, cost: 3, accom: "Hotel,Airbnb,Cabin", coordsN: 41.1, coordsE: -75.3}
+                waterSports: 1, amusParks: 5, clubsBars: 3, casinos: 5, sightSeeing: 1, boardwalk: 1, concerts: 1, proSports: 1, cost: 3, accom: "Hotel,Airbnb,Cabin", coordsN: 41.1220, coordsE: -75.3646}
                 ,{name: "Scranton,PA", avgTemp: 50, annualRainInches: 20.1, avgHumidity: 67, beaches: 1, shopping: 2, hiking: 4, camping: 3, outdoorSports: 3, winterSports: 5,
-                waterSports: 1, amusParks: 3, clubsBars: 3, casinos: 1, sightSeeing: 5, boardwalk: 1, concerts: 2, proSports: 1, cost: 2, accom: "Hotel,Airbnb,Cabin", coordsN: 41.4, coordsE: -75.6}
+                waterSports: 1, amusParks: 3, clubsBars: 3, casinos: 1, sightSeeing: 5, boardwalk: 1, concerts: 2, proSports: 1, cost: 2, accom: "Hotel,Airbnb,Cabin", coordsN: 41.4090, coordsE: -75.6624}
                 ,{name: "King of Prussia,PA", avgTemp: 56, annualRainInches: 20.4, avgHumidity: 64, beaches: 1, shopping: 5, hiking: 3, camping: 1, outdoorSports: 1, winterSports: 1,
-                waterSports: 1, amusParks: 1, clubsBars: 3, casinos: 5, sightSeeing: 3, boardwalk: 1, concerts: 1, proSports: 1, cost: 2, accom: "Hotel,Airbnb", coordsN: 40.1, coordsE: -75.3}
+                waterSports: 1, amusParks: 1, clubsBars: 3, casinos: 5, sightSeeing: 3, boardwalk: 1, concerts: 1, proSports: 1, cost: 2, accom: "Hotel,Airbnb", coordsN: 40.1013, coordsE: -75.3836}
                 ,{name: "Hershey,PA", avgTemp: 55, annualRainInches: 38.8, avgHumidity: 64, beaches: 1, shopping: 2, hiking: 1, camping: 4, outdoorSports: 1, winterSports: 1,
-                waterSports: 1, amusParks: 5, clubsBars: 2, casinos: 1, sightSeeing: 3, boardwalk: 1, concerts: 1, proSports: 1, cost: 3, accom: "Hotel,Airbnb", coordsN: 40.2, coordsE: -76.6}                         
+                waterSports: 1, amusParks: 5, clubsBars: 2, casinos: 1, sightSeeing: 3, boardwalk: 1, concerts: 1, proSports: 1, cost: 3, accom: "Hotel,Airbnb", coordsN: 40.2859, coordsE: -76.6502}                         
                 ,{name: "Altoona,PA", avgTemp: 50, annualRainInches: 19.4, avgHumidity: 70, beaches: 1, shopping: 3, hiking: 3, camping: 2, outdoorSports: 2, winterSports: 1,
-                waterSports: 1, amusParks: 3, clubsBars: 2, casinos: 1, sightSeeing: 4, boardwalk: 1, concerts: 1, proSports: 1, cost: 1, accom: "Hotel,Airbnb", coordsN: 40.5, coordsE: -78.4}
+                waterSports: 1, amusParks: 3, clubsBars: 2, casinos: 1, sightSeeing: 4, boardwalk: 1, concerts: 1, proSports: 1, cost: 1, accom: "Hotel,Airbnb", coordsN: 40.5187, coordsE: -78.3947}
                 ,{name: "Punxsutawney,PA", avgTemp: 48, annualRainInches: 21.8, avgHumidity: 72, beaches: 1, shopping: 1, hiking: 1, camping: 1, outdoorSports: 1, winterSports: 1,
-                waterSports: 1, amusParks: 1, clubsBars: 2, casinos: 1, sightSeeing: 3, boardwalk: 1, concerts: 1, proSports: 1, cost: 1, accom: "Hotel,Airbnb", coordsN: 40.9, coordsE: -78.9}
+                waterSports: 1, amusParks: 1, clubsBars: 2, casinos: 1, sightSeeing: 3, boardwalk: 1, concerts: 1, proSports: 1, cost: 1, accom: "Hotel,Airbnb", coordsN: 40.9437, coordsE: -78.9709}
                 ,{name: "State College,PA", avgTemp: 50, annualRainInches: 4.4, avgHumidity: 67, beaches: 1, shopping: 1, hiking: 1, camping: 1, outdoorSports: 1, winterSports: 1,
-                waterSports: 1, amusParks: 1, clubsBars: 3, casinos: 1, sightSeeing: 1, boardwalk: 1, concerts: 5, proSports: 4, cost: 3, accom: "Hotel,Airbnb", coordsN: 40.7, coordsE: -77.8}
+                waterSports: 1, amusParks: 1, clubsBars: 3, casinos: 1, sightSeeing: 1, boardwalk: 1, concerts: 5, proSports: 4, cost: 3, accom: "Hotel,Airbnb", coordsN: 40.7934, coordsE: -77.8600}
                 ,{name: "Grove City,PA", avgTemp: 53, annualRainInches: 12.5, avgHumidity: 65, beaches: 1, shopping: 3, hiking: 2, camping: 1, outdoorSports: 1, winterSports: 1,
-                waterSports: 1, amusParks: 1, clubsBars: 3, casinos: 1, sightSeeing: 2, boardwalk: 1, concerts: 1, proSports: 1, cost: 1, accom: "Hotel,Airbnb", coordsN: 41.1, coordsE: -80.1}
+                waterSports: 1, amusParks: 1, clubsBars: 3, casinos: 1, sightSeeing: 2, boardwalk: 1, concerts: 1, proSports: 1, cost: 1, accom: "Hotel,Airbnb", coordsN: 41.1578, coordsE: -80.0887}
                 ,{name: "Uniontown,PA", avgTemp: 53, annualRainInches: 12.5, avgHumidity: 65, beaches: 1, shopping: 2, hiking: 1, camping: 1, outdoorSports: 2, winterSports: 1,
-                waterSports: 1, amusParks: 1, clubsBars: 2, casinos: 1, sightSeeing: 1, boardwalk: 1, concerts: 1, proSports: 1, cost: 1, accom: "Hotel,Airbnb", coordsN: 39.8, coordsE: -79.7}
+                waterSports: 1, amusParks: 1, clubsBars: 2, casinos: 1, sightSeeing: 1, boardwalk: 1, concerts: 1, proSports: 1, cost: 1, accom: "Hotel,Airbnb", coordsN: 39.9001, coordsE: -79.7164}
                 ,{name: "York,PA", avgTemp: 53, annualRainInches:20.5 , avgHumidity: 69, beaches: 1, shopping: 2, hiking: 1, camping: 1, outdoorSports: 1, winterSports: 1,
-                waterSports: 1, amusParks: 1, clubsBars: 3, casinos: 5, sightSeeing: 1, boardwalk: 1, concerts: 1, proSports: 3, cost: 1, accom: "Hotel,Airbnb", coordsN: 39.9, coordsE: -76.7}
+                waterSports: 1, amusParks: 1, clubsBars: 3, casinos: 5, sightSeeing: 1, boardwalk: 1, concerts: 1, proSports: 3, cost: 1, accom: "Hotel,Airbnb", coordsN: 39.9626, coordsE: -76.7277}
                 ,{name: "Williamsport,PA", avgTemp: 50, annualRainInches: 4.4, avgHumidity: 67, beaches: 1, shopping: 2, hiking: 2, camping: 2, outdoorSports: 2, winterSports: 1,
-                waterSports: 1, amusParks: 1, clubsBars: 2, casinos: 1, sightSeeing: 4, boardwalk: 1, concerts: 1, proSports: 2, cost: 2, accom: "Hotel,Airbnb", coordsN: 41.2, coordsE: -77.0}
+                waterSports: 1, amusParks: 1, clubsBars: 2, casinos: 1, sightSeeing: 4, boardwalk: 1, concerts: 1, proSports: 2, cost: 2, accom: "Hotel,Airbnb", coordsN: 41.2412, coordsE: -77.0011}
                 ,{name: "Somerset,PA", avgTemp: 48, annualRainInches: 43.3, avgHumidity: 83, beaches: 1, shopping: 1, hiking: 4, camping: 5, outdoorSports: 2, winterSports: 1,
-                waterSports: 1, amusParks: 1, clubsBars: 2, casinos: 1, sightSeeing: 3, boardwalk: 1, concerts: 1, proSports: 1, cost: 1, accom: "Hotel,Airbnb", coordsN: 40.0, coordsE: -79.0}
+                waterSports: 1, amusParks: 1, clubsBars: 2, casinos: 1, sightSeeing: 3, boardwalk: 1, concerts: 1, proSports: 1, cost: 1, accom: "Hotel,Airbnb", coordsN: 40.0084, coordsE: -79.0781}
                 ,{name: "Indiana,PA", avgTemp: 48, annualRainInches: 21.8, avgHumidity: 72, beaches: 1, shopping: 1, hiking: 4, camping: 2, outdoorSports: 4, winterSports: 2,
-                waterSports: 1, amusParks: 1, clubsBars: 3, casinos: 1, sightSeeing: 1, boardwalk: 1, concerts: 1, proSports: 1, cost: 1, accom: "Hotel,Airbnb", coordsN: 40.6, coordsE: -79.1}
+                waterSports: 1, amusParks: 1, clubsBars: 3, casinos: 1, sightSeeing: 1, boardwalk: 1, concerts: 1, proSports: 1, cost: 1, accom: "Hotel,Airbnb", coordsN: 40.6215, coordsE: -79.1525}
                 ,{name: "Jim Thorpe,PA", avgTemp: 52, annualRainInches: 22.8, avgHumidity: 67, beaches: 1, shopping: 1, hiking: 5, camping: 3, outdoorSports: 5, winterSports: 4,
-                waterSports: 4, amusParks: 1, clubsBars: 1, casinos: 1, sightSeeing: 3, boardwalk: 1, concerts: 3, proSports: 1, cost: 1, accom: "Hotel,Airbnb", coordsN: 40.8, coordsE: -75.7}
+                waterSports: 4, amusParks: 1, clubsBars: 1, casinos: 1, sightSeeing: 3, boardwalk: 1, concerts: 3, proSports: 1, cost: 1, accom: "Hotel,Airbnb", coordsN: 40.8759, coordsE: -75.7324}
                 ,{name: "Mansfield,PA", avgTemp: 50, annualRainInches: 20.1, avgHumidity: 67, beaches: 1, shopping: 1, hiking: 2, camping: 1, outdoorSports: 2, winterSports: 1,
-                waterSports: 1, amusParks: 1, clubsBars: 1, casinos: 1, sightSeeing: 1, boardwalk: 1, concerts: 1, proSports: 1, cost: 1, accom: "Hotel,Airbnb", coordsN: 41.8, coordsE: -77.1}
+                waterSports: 1, amusParks: 1, clubsBars: 1, casinos: 1, sightSeeing: 1, boardwalk: 1, concerts: 1, proSports: 1, cost: 1, accom: "Hotel,Airbnb", coordsN: 41.8073, coordsE: -77.0775}
                 ,{name: "Cherry Springs State Park,PA", avgTemp: 47, annualRainInches: 37.1, avgHumidity: 69, beaches: 2, shopping: 1, hiking: 5, camping: 5, outdoorSports: 3, winterSports: 1,
-                waterSports: 1, amusParks: 1, clubsBars: 1, casinos: 1, sightSeeing: 2, boardwalk: 1, concerts: 1, proSports: 1, cost: 1, accom: "Cabin,Airbnb", coordsN: 41.6, coordsE: -77.8}                         
+                waterSports: 1, amusParks: 1, clubsBars: 1, casinos: 1, sightSeeing: 2, boardwalk: 1, concerts: 1, proSports: 1, cost: 1, accom: "Cabin,Airbnb", coordsN: 41.6632, coordsE: -77.8234}                         
                 ,{name: "Seven Springs,PA", avgTemp: 52, annualRainInches: 20.9, avgHumidity: 67, beaches: 1, shopping: 1, hiking: 3, camping: 2, outdoorSports: 3, winterSports: 5,
-                waterSports: 1, amusParks: 1, clubsBars: 1, casinos: 1, sightSeeing: 1, boardwalk: 1, concerts: 1, proSports: 1, cost: 3, accom: "Hotel", coordsN: 40.0, coordsE: -79.3}
+                waterSports: 1, amusParks: 1, clubsBars: 1, casinos: 1, sightSeeing: 1, boardwalk: 1, concerts: 1, proSports: 1, cost: 3, accom: "Hotel", coordsN: 40.0230, coordsE: -79.2977}
                 ,{name: "Ohiopyle,PA", avgTemp: 53, annualRainInches: 25.2, avgHumidity: 68, beaches: 1, shopping: 1, hiking: 5, camping: 2, outdoorSports: 3, winterSports: 1,
-                waterSports: 3, amusParks: 1, clubsBars: 1, casinos: 1, sightSeeing: 2, boardwalk: 1, concerts: 1, proSports: 1, cost: 1, accom: "Airbnb,Cabin", coordsN: 39.8, coordsE: -79.5}
+                waterSports: 3, amusParks: 1, clubsBars: 1, casinos: 1, sightSeeing: 2, boardwalk: 1, concerts: 1, proSports: 1, cost: 1, accom: "Airbnb,Cabin", coordsN: 39.8717, coordsE: -79.4923}
                 ,{name: "Delaware Water Gap,PA", avgTemp: 50, annualRainInches: 22.5, avgHumidity: 66, beaches: 1, shopping: 1, hiking: 5, camping: 3, outdoorSports: 3, winterSports: 1,
-                waterSports: 3, amusParks: 1, clubsBars: 1, casinos: 1, sightSeeing: 2, boardwalk: 1, concerts: 1, proSports: 1, cost: 1, accom: "Hotel,Airbnb,Cabin", coordsN: 40.9, coordsE: -75.1}
+                waterSports: 3, amusParks: 1, clubsBars: 1, casinos: 1, sightSeeing: 2, boardwalk: 1, concerts: 1, proSports: 1, cost: 1, accom: "Hotel,Airbnb,Cabin", coordsN: 40.9793, coordsE: -75.1430}
                 ,{name: "Hickory Run State Park,PA", avgTemp: 48, annualRainInches: 43.7, avgHumidity: 70, beaches: 1, shopping: 1, hiking: 5, camping: 5, outdoorSports: 3, winterSports: 1,
-                waterSports: 1, amusParks: 1, clubsBars: 1, casinos: 1, sightSeeing: 1, boardwalk: 1, concerts: 1, proSports: 1, cost: 1, accom: "Airbnb,Cabin", coordsN: 41.0, coordsE: -75.4}];
+                waterSports: 1, amusParks: 1, clubsBars: 1, casinos: 1, sightSeeing: 1, boardwalk: 1, concerts: 1, proSports: 1, cost: 1, accom: "Airbnb,Cabin", coordsN: 41.0247, coordsE: -75.7095}];
 
     locs_attracs = [{location: "Philaldelphia,PA", attracs: [{name:"The Fashion District", categories:["shopping"]}
                                                             ,{name:"Rivers Casino", categories:["casinos"]}
