@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,Router } from '@angular/router';
 import { ignoreElements } from 'rxjs';
-import { GlobalsService, MatchingLoc } from 'src/app/globals.service';
+import { GlobalsService, MatchingLoc, Attraction } from 'src/app/globals.service';
 
 @Component({
   selector: 'app-pref-form',
@@ -13,12 +13,14 @@ export class PrefFormComponent implements OnInit {
   locations;
   matchingLocs: MatchingLoc[] = [];
   prefs;
+  attracs;
   
   constructor(private router: Router, private route: ActivatedRoute, private globals: GlobalsService) 
   { 
     this.locations = this.globals.locations;
     this.matchingLocs = this.globals.getMatchingLocs();
     this.prefs = this.globals.prefs;
+    this.attracs = this.globals.locs_attracs;
     
     this.route.queryParams.subscribe(params =>
     {
@@ -380,80 +382,99 @@ export class PrefFormComponent implements OnInit {
         else 
           matchPer += 0;
 
-        /*if (loc.name == "Hickory Run State Park,PA")
+        var matching_attracs: Attraction[] = [];
+
+        var index = -1;
+        for (var j=0; j<this.attracs.length; j++)
         {
-          console.log("Warm weather matching = "+(Math.abs((Math.round((loc.avgTemp-avgTempMin)/avgTempTotalDivisor)+1) - warm_weather_value)*(-25) + 100)+"%");
-          console.log("Cold weather matching = "+((4-(Math.abs((Math.round((loc.avgTemp-avgTempMin)/avgTempTotalDivisor)+1) - cold_weather_value)))*(-25) + 100)+"%");
-          console.log("Rain matching = "+(Math.abs((Math.round((loc.annualRainInches-annualRainInchesMin)/avgAnnualRainInchesDivisor)+1) - rain_value)*(-25) + 100)+"%");
-          console.log("Humidity matching = "+(Math.abs((Math.round(loc.avgHumidity/25)+1) - humitidy_value)*(-25) + 100)+"%");
-          console.log("Dry climates matching = "+(Math.abs((Math.round(loc.avgHumidity/25)+1) - dry_climates_value)*(-25) + 100)+"%");
-          console.log("Beach matching = "+(Math.abs(loc.beaches - beach_value)*(-25) + 100)+"%");
-          console.log("Shopping matching = "+(Math.abs(loc.shopping - shopping_value)*(-25) + 100)+"%");
-          console.log("Hiking matching = "+(Math.abs(loc.hiking - hiking_value)*(-25) + 100)+"%");
-          console.log("Camping matching = "+(Math.abs(loc.camping - camping_value)*(-25) + 100)+"%");
-          console.log("Outdoor sports matching = "+(Math.abs(loc.outdoorSports - outdoor_sports_value)*(-25) + 100)+"%");
-          console.log("Winter spots matching = "+(Math.abs(loc.winterSports - winter_sports_value)*(-25) + 100)+"%");
-          console.log("Water spots matching = "+(Math.abs(loc.waterSports - water_sports_value)*(-25) + 100)+"%");
-          console.log("Amusement parks matching = "+(Math.abs(loc.amusParks - amusement_parks_value)*(-25) + 100)+"%");
-          console.log("Clubs & bars matching = "+(Math.abs(loc.clubsBars - clubs_and_bars_value)*(-25) + 100)+"%");
-          console.log("Casinos matching = "+(Math.abs(loc.casinos - casinos_value)*(-25) + 100)+"%");
-          console.log("Sightseeing tours matching = "+(Math.abs(loc.sightSeeing - sightseeing_tours_value)*(-25) + 100)+"%");
-          console.log("Boardwalk matching = "+(Math.abs(loc.boardwalk - boardwalk_attractions_value)*(-25) + 100)+"%");
-          console.log("Concerts matching = "+(Math.abs(loc.concerts - concerts_value)*(-25) + 100)+"%");
-          console.log("Pro sports matching = "+(Math.abs(loc.proSports - professional_sports_value)*(-25) + 100)+"%");
-          if (price_value == 3) 
-            console.log("Price matching = "+(100)+"%");
-          else
-            console.log("Price matching = "+(Math.abs(loc.cost - price_value)*(-25) + 100)+"%");
+          if (this.attracs[j].location == loc.name)
+          {
+            index = j;
+            break;
+          }
+        }
 
-          if (distance_value == 3) 
-            console.log("Distance matching = "+(100)+"%");
-          else
-            console.log("Distance matching = "+(Math.abs((Math.round((distanceAmnt-distanceMin)/distanceDivisor)+1) - distance_value)*(-25) + 100)+"%");
-
-          if (hotel_resort_value == 3)
-            console.log("Hotel matching = "+(100)+"%");
-          else if (hotel_resort_value > 3 && this.accomsMatch("Hotel", loc_accoms))
-            console.log("Hotel matching = "+(100)+"%");
-          else if (hotel_resort_value < 3 && !this.accomsMatch("Hotel", loc_accoms))
-            console.log("Hotel matching = "+(100)+"%");
-          else
-            console.log("Hotel matching = "+(0)+"%");
-
-          if (airbnb_value == 3)
-            console.log("Airbnb matching = "+(100)+"%");
-          else if (airbnb_value > 3 && this.accomsMatch("Airbnb", loc_accoms))
-            console.log("Airbnb matching = "+(100)+"%");
-          else if (airbnb_value < 3 && !this.accomsMatch("Airbnb", loc_accoms))
-            console.log("Airbnb matching = "+(100)+"%");
-          else
-            console.log("Airbnb matching = "+(0)+"%");
-
-          if (beach_house_value == 3)
-            console.log("Beach house matching = "+(100)+"%");
-          else if (beach_house_value > 3 && this.accomsMatch("Beach House", loc_accoms))
-            console.log("Beach house matching = "+(100)+"%");
-          else if (beach_house_value < 3 && !this.accomsMatch("Beach House", loc_accoms))
-            console.log("Beach house matching = "+(100)+"%");
-          else
-            console.log("Beach house matching = "+(0)+"%");
-
-          if (cabin_value == 3) 
-            console.log("Cabin matching = "+(100)+"%");
-          else if (cabin_value > 3 && this.accomsMatch("Cabin", loc_accoms))
-            console.log("Cabin matching = "+(100)+"%");
-          else if (cabin_value < 3 && !this.accomsMatch("Cabin", loc_accoms))
-            console.log("Cabin matching = "+(100)+"%");
-          else
-            console.log("Cabin matching = "+(0)+"%");
-
-          console.log(loc.name+" matched preferences "+matchPer+"%");
-        }*/
+        for (var j=0; j<this.attracs[index].attracs.length; j++)
+        {
+          for (var k=0; k<this.attracs[index].attracs[j].categories.length; k++)
+          {
+            if (this.attracs[index].attracs[j].categories[k] == "beaches" && beach_value > 3)
+            {
+              matching_attracs.push(this.attracs[index].attracs[j]);
+              break;
+            }
+            if (this.attracs[index].attracs[j].categories[k] == "shopping" && shopping_value > 3)
+            {
+              matching_attracs.push(this.attracs[index].attracs[j]);
+              break;
+            }
+            if (this.attracs[index].attracs[j].categories[k] == "hiking" && hiking_value > 3)
+            {
+              matching_attracs.push(this.attracs[index].attracs[j]);
+              break;
+            }
+            if (this.attracs[index].attracs[j].categories[k] == "camping" && camping_value > 3)
+            {
+              matching_attracs.push(this.attracs[index].attracs[j]);
+              break;
+            }
+            if (this.attracs[index].attracs[j].categories[k] == "outdoorSports" && outdoor_sports_value > 3)
+            {
+              matching_attracs.push(this.attracs[index].attracs[j]);
+              break;
+            }
+            if (this.attracs[index].attracs[j].categories[k] == "winterSports" && winter_sports_value > 3)
+            {
+              matching_attracs.push(this.attracs[index].attracs[j]);
+              break;
+            }
+            if (this.attracs[index].attracs[j].categories[k] == "waterSports" && water_sports_value > 3)
+            {
+              matching_attracs.push(this.attracs[index].attracs[j]);
+              break;
+            }
+            if (this.attracs[index].attracs[j].categories[k] == "amusParks" && amusement_parks_value > 3)
+            {
+              matching_attracs.push(this.attracs[index].attracs[j]);
+              break;
+            }
+            if (this.attracs[index].attracs[j].categories[k] == "clubsBars" && clubs_and_bars_value > 3)
+            {
+              matching_attracs.push(this.attracs[index].attracs[j]);
+              break;
+            }
+            if (this.attracs[index].attracs[j].categories[k] == "casinos" && casinos_value > 3)
+            {
+              matching_attracs.push(this.attracs[index].attracs[j]);
+              break;
+            }
+            if (this.attracs[index].attracs[j].categories[k] == "sightSeeing" && sightseeing_tours_value > 3)
+            {
+              matching_attracs.push(this.attracs[index].attracs[j]);
+              break;
+            }
+            if (this.attracs[index].attracs[j].categories[k] == "boardwalk" && boardwalk_attractions_value > 3)
+            {
+              matching_attracs.push(this.attracs[index].attracs[j]);
+              break;
+            }
+            if (this.attracs[index].attracs[j].categories[k] == "concerts" && concerts_value > 3)
+            {
+              matching_attracs.push(this.attracs[index].attracs[j]);
+              break;
+            }
+            if (this.attracs[index].attracs[j].categories[k] == "proSports" && professional_sports_value > 3)
+            {
+              matching_attracs.push(this.attracs[index].attracs[j]);
+              break;
+            }
+          }
+        }
 
         if (home_input_value != loc.name)
         {
           matchPer = matchPer/25;
-          let aLocation = new MatchingLoc(loc.name, matchPer);
+          let aLocation = new MatchingLoc(loc.name, matchPer, matching_attracs, loc.coordsN, loc.coordsE);
           this.matchingLocs.push(aLocation);
           console.log(this.matchingLocs[this.matchingLocs.length-1].name+" matches "+this.matchingLocs[this.matchingLocs.length-1].matchingPercent+"%");
         }
