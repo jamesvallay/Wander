@@ -11,6 +11,7 @@ export class LandingPageComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
   }
 
 }
